@@ -1,0 +1,76 @@
+{
+  "mode_name": "OFFMARKET_TEST",
+  "execution_mode": "SIGNALS_ONLY",
+  "execution_enabled": false,
+  "websocket_started": false,
+  "offmarket_status": "OFFMARKET_SUCCESS",
+  "offmarket_success": true,
+  "offmarket_health_ok": true,
+  "candidate_count": 19,
+  "backup_candidate_count": 0,
+  "signal_count": 3,
+  "messages_sent": 5,
+  "messages_failed": 0,
+  "last_error": "",
+  "queue_drain_attempted": true,
+  "queue_drain_completed": true,
+  "queue_drain_timed_out": false,
+  "menu_alert_status": "telegram_mode=REAL, menu_id=M092_003554_839732_001, messages_sent=5, alert_state=RUNNING'",
+  "degraded": false,
+  "scanner_soft_degraded": true,
+  "last_cycle_status": "OFFMARKET_CYCLE_RAN_SIGNALS_RELEASED",
+  "scanner_notes": [
+    "daily_movers source is empty.",
+    "daily_losers source is empty.",
+    "previous_day_movers.json is empty.",
+    "previous_day_losers.json is empty.",
+    "WebSocket snapshot stale/unavailable; running in DEGRADED mode.",
+    "Stage1 snapshot-only mode: 103 symbols had missing/stale WS data.",
+    "OFFMARKET_TEST soft-passed 40 symbols with incomplete WS liquidity/range fields.",
+    "OFFMARKET_TEST seeded 40 WS-missing symbols into Stage2 shortlist path.",
+    "OFFMARKET_TEST Stage2 candle fetch capped to 20 symbols.",
+    "Candle data insufficient/failed for 1 survivors."
+  ],
+  "telegram_mode": "REAL",
+  "manual_command_hold": {
+    "attempted": false,
+    "hold_seconds": 0.0,
+    "processed_updates": 0,
+    "plan_command_verifications": []
+  },
+  "telegram_command_diagnostics": [
+    {
+      "timestamp": 1775070346.0150735,
+      "raw_command": "Plan C",
+      "parsed_action": "PLAN",
+      "source_chat_id": "5992983176",
+      "requested_menu_id": null,
+      "effective_menu_id": null,
+      "requested_tokens": [
+        "C"
+      ],
+      "resolved_items": [],
+      "unresolved_tokens": [],
+      "plan_events": [],
+      "reply_events": [],
+      "ok": false,
+      "error": "No valid runtime contract found for requested menu.",
+      "stop_reason": "no_runtime_contract",
+      "reply_target_chat_ids": [],
+      "summary": "raw='Plan C' action=PLAN source_chat=5992983176 menu=- reply_chat=['-'] resolved=['-'] plans=['-'] stop=no_runtime_contract ok=False"
+    }
+  ],
+  "telegram_queue": {
+    "final_queue_size": 0,
+    "waited_sec": 3.01
+  },
+  "module07_readiness": {
+    "ready": true,
+    "reasons": []
+  },
+  "subscription_scope": {
+    "live_index_count": 19,
+    "watchlist_token_count": 98,
+    "resolved_live_indexes": 19
+  }
+}

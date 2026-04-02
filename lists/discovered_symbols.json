@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "HAPPSTMNDS",
+    "exchange": "NSE",
+    "source": "telegram_manual",
+    "added_at_ist": "2026-03-24T11:29:10.429030+05:30"
+  },
+  {
+    "symbol": "FIRSTCRY",
+    "exchange": "NSE",
+    "source": "telegram_manual",
+    "added_at_ist": "2026-03-24T11:29:11.264871+05:30"
+  }
+]

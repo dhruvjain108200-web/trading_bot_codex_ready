@@ -1,0 +1,740 @@
+# ================================
+# TRADING BOT BOOTSTRAP CELL
+# ================================
+# Initializes Modules 01–08 and starts Supervisor runtime
+
+from google.colab import userdata
+import sys
+import importlib
+import json
+import os
+
+# ============================================================
+# PATH SETUP
+# ============================================================
+
+PATHS = [
+    "/content/drive/MyDrive/trading_bot/src",
+    "/content/drive/MyDrive/trading_bot/src/module01_broker",
+    "/content/drive/MyDrive/trading_bot/src/module02_ws",
+    "/content/drive/MyDrive/trading_bot/src/module03_context",
+    "/content/drive/MyDrive/trading_bot/src/module04_scanner",
+    "/content/drive/MyDrive/trading_bot/src/module05_strategy",
+    "/content/drive/MyDrive/trading_bot/src/module06_alerts",
+    "/content/drive/MyDrive/trading_bot/src/module07_maintenance",
+    "/content/drive/MyDrive/trading_bot/src/module08_supervisor",
+]
+
+for p in PATHS:
+    if p not in sys.path:
+        sys.path.append(p)
+
+print("Paths configured")
+
+# ============================================================
+# SECRETS
+# ============================================================
+
+API_KEY = userdata.get("ANGEL_API_KEY")
+CLIENT_CODE = userdata.get("ANGEL_CLIENT_ID")
+PIN = userdata.get("ANGEL_PIN")
+TOTP_SECRET = userdata.get("ANGEL_TOTP_SECRET")
+
+TELEGRAM_TOKEN = userdata.get("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = userdata.get("TELEGRAM_CHAT_ID")
+
+# ============================================================
+# MODULE IMPORTS
+# ============================================================
+
+# Module 01
+from broker_connection import BrokerConnection
+
+# Module 02
+from module02_ws.module_02_websocket_v2_pipeline import (
+    WebSocketV2Pipeline,
+    load_production_index_tokens
+)
+
+# Module 03
+from module03_context.module_03_market_context_monitor import MarketContextMonitor
+
+# Module 04
+import module04_scanner.module_04_stock_universe_builder_scanner as m4
+importlib.reload(m4)
+
+from module04_scanner.module_04_stock_universe_builder_scanner import (
+    StockUniverseBuilderScanner,
+    SimpleMarketContextProvider,
+)
+
+# Module 05
+import module05_strategy.module_05_strategy_pattern_tradeplan_engine as m5
+importlib.reload(m5)
+
+from module05_strategy.module_05_strategy_pattern_tradeplan_engine import (
+    Module05StrategyPatternTradePlanEngine,
+    Module05Config,
+    run_module_05,
+)
+
+# Module 06
+import module06_alerts.module_06_alert_engine as m6
+importlib.reload(m6)
+
+from module06_alerts.module_06_alert_engine import (
+    AlertEngine,
+    AlertEngineConfig,
+)
+
+# Module 07
+from maintenance_worker import MaintenanceWorker, BotPaths
+
+# Module 08
+from module08_supervisor.module_08_supervisor_orchestrator import Supervisor
+
+print("Modules imported")
+
+# ============================================================
+# MAINTENANCE PROVIDER (Module 04 helper)
+# ============================================================
+
+class RealBotMaintenanceProvider:
+
+    def __init__(self, root: str):
+        self.root = root.rstrip("/")
+        self.path_map = {
+            "watchlist.json": f"{self.root}/lists/watchlist.json",
+            "potential_stocks.json": f"{self.root}/lists/potential_stocks.json",
+            "daily_movers_cache.json": f"{self.root}/lists/daily_movers_cache.json",
+            "daily_losers_cache.json": f"{self.root}/lists/daily_losers_cache.json",
+            "index_taxonomy.json": f"{self.root}/lists/index_taxonomy.json",
+            "runtime_config.json": f"{self.root}/config/runtime_config.json",
+            "symbol_to_token.json": f"{self.root}/mappings/symbol_to_token.json",
+            "token_to_symbol.json": f"{self.root}/mappings/token_to_symbol.json",
+            "watchlist_tokens.json": f"{self.root}/mappings/watchlist_tokens.json",
+            "index_tokens.json": f"{self.root}/mappings/index_tokens.json",
+        }
+
+    def read_json(self, name: str):
+        path = self.path_map.get(name)
+        if not path or not os.path.exists(path):
+            return None
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+class DailyMarketListsProvider:
+    def __init__(self, broker, root: str):
+        self.broker = broker
+        self.root = root.rstrip("/")
+
+    def _read_json(self, path: str, default=None):
+        default = [] if default is None else default
+        if not os.path.exists(path):
+            return default
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            return data if isinstance(data, list) else default
+        except Exception:
+            return default
+
+    def _write_json(self, path: str, data):
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    def _is_cash_equity_symbol(self, symbol: str) -> bool:
+        s = str(symbol or "").strip().upper()
+        if not s:
+            return False
+        bad_suffixes = ("FUT", "CE", "PE")
+        if s.endswith(bad_suffixes):
+            return False
+        if any(ch.isdigit() for ch in s):
+            return False
+        return True
+
+    def _filter_cash_equities(self, rows):
+        out = []
+        for row in rows or []:
+            if isinstance(row, str):
+                symbol = row.strip().upper()
+                if self._is_cash_equity_symbol(symbol):
+                    out.append({"symbol": symbol, "source": "filtered"})
+            elif isinstance(row, dict):
+                symbol = str(row.get("symbol", "")).strip().upper()
+                if self._is_cash_equity_symbol(symbol):
+                    payload = dict(row)
+                    payload["symbol"] = symbol
+                    out.append(payload)
+        return out            
+
+    @property
+    def movers_path(self):
+        return f"{self.root}/lists/daily_movers_cache.json"
+
+    @property
+    def losers_path(self):
+        return f"{self.root}/lists/daily_losers_cache.json"
+
+    @property
+    def watchlist_path(self):
+        return f"{self.root}/lists/watchlist.json"
+
+    @property
+    def potential_path(self):
+        return f"{self.root}/lists/potential_stocks.json"
+    
+    def _normalize_cash_rows(self, rows, source):
+        out = []
+        seen = set()
+
+        for row in rows or []:
+            if isinstance(row, str):
+                symbol = row.strip().upper()
+                payload = {"symbol": symbol, "source": source, "exchange": "NSE"}
+            elif isinstance(row, dict):
+                symbol = str(
+                    row.get("symbol")
+                    or row.get("symbolName")
+                    or row.get("metadata", {}).get("symbol")
+                    or row.get("meta", {}).get("symbol")
+                    or row.get("identifier")
+                    or ""
+                ).strip().upper()
+                if not symbol:
+                    continue
+                payload = dict(row)
+                payload["symbol"] = symbol
+                payload.setdefault("source", source)
+                payload.setdefault("exchange", "NSE")
+            else:
+                continue
+
+            if not symbol:
+                continue
+            if symbol.endswith(("FUT", "CE", "PE")):
+                continue
+            if any(ch.isdigit() for ch in symbol):
+                continue
+
+            if symbol in seen:
+                continue
+            seen.add(symbol)
+            out.append(payload)
+
+        return out
+
+    def _nse_session(self):
+        s = requests.Session()
+        s.headers.update({
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0.0.0 Safari/537.36"
+            ),
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://www.nseindia.com/market-data/top-gainers-losers",
+        })
+        # Warm cookies / anti-bot session
+        s.get("https://www.nseindia.com/", timeout=15)
+        s.get("https://www.nseindia.com/market-data/top-gainers-losers", timeout=15)
+        return s
+
+    def _normalize_nse_row(self, row, source):
+        if not isinstance(row, dict):
+            return None
+
+        symbol = str(
+            row.get("symbol")
+            or row.get("symbolName")
+            or row.get("metadata", {}).get("symbol")
+            or row.get("meta", {}).get("symbol")
+            or row.get("identifier")
+            or ""
+        ).strip().upper()
+
+        if not symbol:
+            return None
+
+        # keep only cash-equity style symbols
+        if symbol.endswith(("FUT", "CE", "PE")) or any(ch.isdigit() for ch in symbol):
+            return None
+
+        out = {
+            "symbol": symbol,
+            "exchange": "NSE",
+            "source": source,
+        }
+
+        # copy common numeric fields when present
+        field_map = {
+            "ltp": ["ltp", "lastPrice", "price"],
+            "open": ["open"],
+            "high": ["high", "dayHigh"],
+            "low": ["low", "dayLow"],
+            "close": ["previousClose", "close"],
+            "netChange": ["netChange", "change"],
+            "percentChange": ["pChange", "percentChange", "perChange"],
+            "tradeVolume": ["totalTradedVolume", "volume"],
+        }
+        for dst, keys in field_map.items():
+            for k in keys:
+                if k in row and row.get(k) is not None:
+                    out[dst] = row.get(k)
+                    break
+
+        return out
+
+    def _extract_rows_from_nse_json(self, payload):
+        # handle several possible shapes
+        if isinstance(payload, list):
+            return payload
+
+        if not isinstance(payload, dict):
+            return []
+
+        for key in (
+            "data",
+            "value",
+            "body",
+            "rows",
+            "topGainers",
+            "topLosers",
+            "gainers",
+            "losers",
+        ):
+            val = payload.get(key)
+            if isinstance(val, list):
+                return val
+
+        # sometimes nested under data
+        data = payload.get("data")
+        if isinstance(data, dict):
+            for key in ("rows", "gainers", "losers", "topGainers", "topLosers"):
+                val = data.get(key)
+                if isinstance(val, list):
+                    return val
+
+        return []
+
+    def _fetch_nse_json_candidates(self, kind: str):
+        """
+        kind: 'gainers' or 'losers'
+        Tries a few likely NSE capital-market JSON paths.
+        """
+        s = self._nse_session()
+
+        candidate_urls = [
+            f"https://www.nseindia.com/api/live-analysis-variations?index={kind}",
+            f"https://www.nseindia.com/api/live-analysis-variations?segment=equities&index={kind}",
+            f"https://www.nseindia.com/api/market-data-pre-open?key={kind}",
+            f"https://www.nseindia.com/api/marketSnapshot?type={kind}",
+        ]
+
+        for url in candidate_urls:
+            try:
+                r = s.get(url, timeout=15)
+                if r.status_code != 200:
+                    continue
+                payload = r.json()
+                rows = self._extract_rows_from_nse_json(payload)
+                if rows:
+                    return rows
+            except Exception:
+                continue
+
+        return []
+
+    def _fetch_nse_cash_gainers(self):
+        rows = self._fetch_nse_json_candidates("gainers")
+        out = []
+        seen = set()
+        for row in rows:
+            item = self._normalize_nse_row(row, "nse_gainers")
+            if not item:
+                continue
+            sym = item["symbol"]
+            if sym in seen:
+                continue
+            seen.add(sym)
+            out.append(item)
+        return out
+
+    def _fetch_nse_cash_losers(self):
+        rows = self._fetch_nse_json_candidates("losers")
+        out = []
+        seen = set()
+        for row in rows:
+            item = self._normalize_nse_row(row, "nse_losers")
+            if not item:
+                continue
+            sym = item["symbol"]
+            if sym in seen:
+                continue
+            seen.add(sym)
+            out.append(item)
+        return out
+
+    def get_daily_movers(self):
+        rows = self._fetch_nse_cash_gainers()
+        self._write_json(self.movers_path, rows)
+        return rows
+
+    def get_daily_losers(self):
+        rows = self._fetch_nse_cash_losers()
+        self._write_json(self.losers_path, rows)
+        return rows
+
+    def get_daily_movers(self):
+        rows = self._normalize_cash_rows(self._fetch_nse_cash_gainers(), "nse_gainers")
+        self._write_json(self.movers_path, rows)
+        return rows
+
+    def get_daily_losers(self):
+        rows = self._normalize_cash_rows(self._fetch_nse_cash_losers(), "nse_losers")
+        self._write_json(self.losers_path, rows)
+        return rows
+
+    def build_potential_stocks(self):
+        watchlist = self._read_json(self.watchlist_path, default=[])
+        movers = self.get_daily_movers()
+        losers = self.get_daily_losers()
+
+        seen = set()
+        out = []
+
+        def add_rows(rows, source):
+            for row in rows or []:
+                if isinstance(row, str):
+                    symbol = row.strip().upper()
+                    payload = {"symbol": symbol, "source": source}
+                elif isinstance(row, dict):
+                    symbol = str(row.get("symbol", "")).strip().upper()
+                    if not symbol:
+                        continue
+                    payload = dict(row)
+                    payload["symbol"] = symbol
+                    payload.setdefault("source", source)
+                else:
+                    continue
+
+                if not symbol or symbol in seen:
+                    continue
+                seen.add(symbol)
+                out.append(payload)
+
+        # Do NOT clone whole watchlist into potential list
+        # Potential list should be dynamic
+        add_rows(movers, "movers")
+        add_rows(losers, "losers")
+
+        # Light fallback only if both are empty
+        if not out:
+            for row in watchlist[:25]:
+                if isinstance(row, str):
+                    symbol = row.strip().upper()
+                    payload = {"symbol": symbol, "source": "watchlist_fallback"}
+                elif isinstance(row, dict):
+                    symbol = str(row.get("symbol", "")).strip().upper()
+                    if not symbol:
+                        continue
+                    payload = dict(row)
+                    payload["symbol"] = symbol
+                    payload.setdefault("source", "watchlist_fallback")
+                else:
+                    continue
+
+                if symbol and symbol not in seen:
+                    seen.add(symbol)
+                    out.append(payload)
+
+        self._write_json(self.potential_path, out)
+        return out
+
+# ============================================================
+# MODULE 01 — BROKER
+# ============================================================
+
+broker = BrokerConnection(
+    api_key=API_KEY,
+    client_code=CLIENT_CODE,
+    pin=PIN,
+    totp_secret=TOTP_SECRET,
+)
+
+broker.ensure_logged_in()
+broker_context = broker.get_context()
+
+print("Broker connected")
+
+# ============================================================
+# MODULE 02 — WEBSOCKET PIPELINE
+# ============================================================
+
+ws_pipeline = WebSocketV2Pipeline(
+    broker_context=broker_context
+)
+
+def load_watchlist_subscription_tokens(path):
+    with open(path, "r", encoding="utf-8") as f:
+        rows = json.load(f)
+
+    if not isinstance(rows, list):
+        raise ValueError("watchlist_tokens.json must be a list of watchlist token rows")
+
+    tokens = []
+    unresolved = []
+    seen = set()
+
+    for idx, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise ValueError(f"watchlist_tokens.json row {idx} must be an object")
+
+        symbol = str(row.get("symbol", "")).strip()
+        exchange = str(row.get("exchange", "")).strip()
+        sector = str(row.get("sector", "")).strip()
+        status = str(row.get("resolution_status", "")).strip().upper()
+        token_raw = row.get("token")
+        token = str(token_raw).strip() if token_raw is not None else ""
+
+        if not symbol or not exchange or not sector:
+            raise ValueError(
+                f"watchlist_tokens.json row {idx} is missing symbol/exchange/sector"
+            )
+
+        if token:
+            if status and status != "RESOLVED":
+                raise ValueError(
+                    f"watchlist_tokens.json row {idx} has token but invalid resolution_status={status!r}"
+                )
+            if token not in seen:
+                seen.add(token)
+                tokens.append(token)
+        else:
+            if status and status != "UNRESOLVED":
+                raise ValueError(
+                    f"watchlist_tokens.json row {idx} is unresolved but resolution_status={status!r}"
+                )
+            unresolved.append(f"{exchange}:{symbol}")
+
+    return {
+        "rows": rows,
+        "tokens": tokens,
+        "unresolved": unresolved,
+    }
+
+idx_tokens, _ = load_production_index_tokens(
+    "/content/drive/MyDrive/trading_bot"
+)
+
+ws_pipeline.set_index_tokens(idx_tokens)
+
+watchlist_tokens_path = "/content/drive/MyDrive/trading_bot/mappings/watchlist_tokens.json"
+if os.path.exists(watchlist_tokens_path):
+    watchlist_contract = load_watchlist_subscription_tokens(watchlist_tokens_path)
+    ws_pipeline.set_watchlist_tokens(watchlist_contract["tokens"])
+    print("Watchlist tokens loaded:", len(watchlist_contract["tokens"]))
+    if watchlist_contract["unresolved"]:
+        print("Watchlist token mappings unresolved:", ", ".join(watchlist_contract["unresolved"]))
+else:
+    print("watchlist_tokens.json not found")
+
+print("WebSocket pipeline ready")
+
+# ============================================================
+# MODULE 07 — MAINTENANCE WORKER
+# ============================================================
+
+paths = BotPaths("/content/drive/MyDrive/trading_bot")
+
+def broker_ready():
+    try:
+        broker.ensure_logged_in()
+        return True, "broker session OK"
+    except Exception as e:
+        return False, f"broker not ready: {e}"
+
+def ws_ready():
+    try:
+        ok = bool(ws_pipeline.health.ws_connected)
+        return (True, "websocket connected") if ok else (False, "websocket disconnected")
+    except Exception as e:
+        return False, f"websocket health check failed: {e}"
+
+def alert_fn(level, title, message, tags=None):
+    tags = tags or []
+    print(f"[{level}] {title} | {message} | tags={tags}")
+
+market_lists_provider = DailyMarketListsProvider(
+    broker=broker,
+    root="/content/drive/MyDrive/trading_bot",
+)
+
+module07 = MaintenanceWorker(
+    paths=paths,
+    broker_ready_fn=broker_ready,
+    ws_ready_fn=ws_ready,
+    alert_fn=alert_fn,
+    market_lists_provider=market_lists_provider,
+)
+
+print("Maintenance worker ready")
+
+# ============================================================
+# MODULE 03 — MARKET CONTEXT
+# ============================================================
+
+module03 = MarketContextMonitor(
+    snapshot_source=ws_pipeline,
+    taxonomy_path="/content/drive/MyDrive/trading_bot/lists/index_taxonomy.json",
+    event_calendar_path="/content/drive/MyDrive/trading_bot/data/event_calendar.json"
+)
+
+module03.start()
+print("Market context monitor started")
+
+print("Market context monitor ready")
+
+# ============================================================
+# MODULE 04 — SCANNER
+# ============================================================
+
+maintenance_provider = RealBotMaintenanceProvider(
+    "/content/drive/MyDrive/trading_bot"
+)
+
+market_ctx = SimpleMarketContextProvider(module03)
+
+scanner = StockUniverseBuilderScanner(
+    broker=broker,
+    pipeline=ws_pipeline,
+    market_context_provider=market_ctx,
+    maintenance_provider=maintenance_provider,
+    candle_provider=broker,
+    config={}
+)
+
+print("Scanner ready")
+
+# ============================================================
+# MODULE 05 — STRATEGY ENGINE
+# ============================================================
+
+strategy_engine = Module05StrategyPatternTradePlanEngine(
+    config=Module05Config(
+        offmarket_test_relax_quality=True,
+        offmarket_test_relax_confidence=True,
+    )
+)
+
+print("Strategy engine ready")
+
+# ============================================================
+# MODULE 06 — ALERT ENGINE
+# ============================================================
+
+bot_state = {
+    "snapshots": {},
+    "market_context": {},
+    "candidates": [],
+    "trade_signals": [],
+    "active_alerts": {},
+    "last_menu": {},
+    "module_health": {},
+}
+
+alert_engine_config = AlertEngineConfig(
+    telegram_bot_token=TELEGRAM_TOKEN,
+    telegram_chat_id=TELEGRAM_CHAT_ID,
+    debug=True,
+)
+
+alert_engine = AlertEngine(
+    config=alert_engine_config,
+    snapshot_getter=lambda: (
+        ws_pipeline.snapshot_store if hasattr(ws_pipeline, "snapshot_store") else {}
+    ),
+    market_context_getter=lambda: module03.get_state() if hasattr(module03, "get_state") else {},
+    health_getter=lambda: {
+        "broker": broker.health() if hasattr(broker, "health") else {},
+        "websocket": ws_pipeline.health.__dict__ if hasattr(ws_pipeline, "health") else {},
+    },
+    shared_state=bot_state,
+)
+
+alert_engine.start()
+
+print("Alert engine ready")
+
+# ============================================================
+# MODULE 08 — SUPERVISOR
+# ============================================================
+
+supervisor = Supervisor(
+    broker=broker,
+    ws_pipeline=ws_pipeline,
+    module03=module03,
+    scanner=scanner,
+    strategy_engine=strategy_engine,
+    alert_engine=alert_engine,
+    maintenance=module07
+)
+
+print("Supervisor initialized")
+
+# ============================================================
+# START BOT
+# ============================================================
+
+print("Starting Supervisor runtime...")
+supervisor.start()
+
+print("Trading bot is now running")
+print("Broker health:", broker.health())
+print("WebSocket health:", ws_pipeline.health)
+
+# ============================================================
+# COLAB RUNTIME WATCHDOG
+# ============================================================
+
+import threading
+import time
+
+def runtime_watchdog():
+
+    print("Watchdog started")
+
+    while True:
+        try:
+            if supervisor._thread is None or not supervisor._thread.is_alive():
+                print("[WATCHDOG] Supervisor thread stopped unexpectedly")
+
+            try:
+                ws_ok = ws_pipeline.health.ws_connected
+            except Exception:
+                ws_ok = False
+
+            if not ws_ok:
+                print("[WATCHDOG] WebSocket appears disconnected")
+
+            print(
+                "[WATCHDOG]",
+                "state=", supervisor.system_state,
+                "last_cycle=", supervisor.last_cycle_status,
+                "ws_connected=", ws_ok
+            )
+
+        except Exception as e:
+            print("[WATCHDOG ERROR]", e)
+
+        time.sleep(60)
+
+watchdog_thread = threading.Thread(
+    target=runtime_watchdog,
+    daemon=True
+)
+
+watchdog_thread.start()

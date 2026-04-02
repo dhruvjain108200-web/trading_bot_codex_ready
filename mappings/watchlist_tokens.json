@@ -1,0 +1,716 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "2885",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ONGC",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "2475",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BPCL",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "526",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "IOC",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "1624",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HINDPETRO",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "1406",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "GAIL",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "4717",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "OIL",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "17438",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ADANIGREEN",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "3563",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ADANITRANS",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": null,
+    "resolution_status": "UNRESOLVED"
+  },
+  {
+    "symbol": "ADANIPOWER",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "token": "17388",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HDFCBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "1333",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ICICIBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "4963",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "SBIN",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "3045",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "AXISBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "5900",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "1922",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "INDUSINDBK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "5258",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BANKBARODA",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "4668",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "PNB",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "10666",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "CANBK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "10794",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "FEDERALBNK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "1023",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "IDFCFIRSTB",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "11184",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "AUBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "21238",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "RBLBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "18391",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BANDHANBNK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "2263",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "YESBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "token": "11915",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "317",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BAJAJFINSV",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "16675",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "SBILIFE",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "21808",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HDFCLIFE",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "467",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ICICIPRULI",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "18652",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ICICIGI",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "21770",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "CHOLAFIN",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "19257",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "MUTHOOTFIN",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "23650",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "MANAPPURAM",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "19061",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "LICHSGFIN",
+    "exchange": "NSE",
+    "sector": "FINANCE",
+    "token": "1997",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "INFY",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "1594",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TCS",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "11536",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "WIPRO",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "3787",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HCLTECH",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "7229",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TECHM",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "13538",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "LTIM",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": null,
+    "resolution_status": "UNRESOLVED"
+  },
+  {
+    "symbol": "PERSISTENT",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "18365",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "COFORGE",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "11543",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "MPHASIS",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "4503",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "LTTS",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "18564",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "CYIENT",
+    "exchange": "NSE",
+    "sector": "IT",
+    "token": "5748",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ITC",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "1660",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "1394",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "NESTLEIND",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "17963",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BRITANNIA",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "547",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "DABUR",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "772",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "MARICO",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "4067",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "GODREJCP",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "10099",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "COLPAL",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "15141",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TATACONSUM",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "3432",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "UBL",
+    "exchange": "NSE",
+    "sector": "FMCG",
+    "token": "16713",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TATASTEEL",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "3499",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "JSWSTEEL",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "11723",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HINDALCO",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "1363",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "VEDL",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "3063",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "SAIL",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "2963",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "NMDC",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "15332",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "JINDALSTEL",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "6733",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "APLAPOLLO",
+    "exchange": "NSE",
+    "sector": "METAL",
+    "token": "25780",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "MARUTI",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "10999",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TATAMOTORS",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": null,
+    "resolution_status": "UNRESOLVED"
+  },
+  {
+    "symbol": "M&M",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "2031",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BAJAJ-AUTO",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "16669",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "HEROMOTOCO",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "1348",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ASHOKLEY",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "212",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TVSMOTOR",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "8479",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "EICHERMOT",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "910",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BALKRISIND",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "335",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "SONACOMS",
+    "exchange": "NSE",
+    "sector": "AUTO",
+    "token": "4684",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "3351",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "DRREDDY",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "881",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "CIPLA",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "694",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "DIVISLAB",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "10940",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "LUPIN",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "10440",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "AUROPHARMA",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "275",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BIOCON",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "11373",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TORNTPHARM",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "3518",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ALKEM",
+    "exchange": "NSE",
+    "sector": "PHARMA",
+    "token": "11703",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "LT",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "11483",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ADANIENT",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "25",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "15083",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "IRB",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "15313",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "NBCC",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "31415",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "PNCINFRA",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "9385",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "KEC",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "13260",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "IRCON",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "4986",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "KNRCON",
+    "exchange": "NSE",
+    "sector": "INFRA",
+    "token": "15283",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "NTPC",
+    "exchange": "NSE",
+    "sector": "POWER",
+    "token": "11630",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "POWERGRID",
+    "exchange": "NSE",
+    "sector": "POWER",
+    "token": "14977",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "TATAPOWER",
+    "exchange": "NSE",
+    "sector": "POWER",
+    "token": "3426",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "NHPC",
+    "exchange": "NSE",
+    "sector": "POWER",
+    "token": "17400",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "ADANIPOWER",
+    "exchange": "NSE",
+    "sector": "POWER",
+    "token": "17388",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "DLF",
+    "exchange": "NSE",
+    "sector": "REALTY",
+    "token": "14732",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "LODHA",
+    "exchange": "NSE",
+    "sector": "REALTY",
+    "token": "3220",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "OBEROIRLTY",
+    "exchange": "NSE",
+    "sector": "REALTY",
+    "token": "20242",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "GODREJPROP",
+    "exchange": "NSE",
+    "sector": "REALTY",
+    "token": "17875",
+    "resolution_status": "RESOLVED"
+  },
+  {
+    "symbol": "BRIGADE",
+    "exchange": "NSE",
+    "sector": "REALTY",
+    "token": "15184",
+    "resolution_status": "RESOLVED"
+  }
+]

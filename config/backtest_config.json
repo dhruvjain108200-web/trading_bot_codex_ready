@@ -1,0 +1,7 @@
+{
+  "universe_size": 50,
+  "lookback_trading_days": 20,
+  "timeframe": "5m",
+  "fill_model": "OHLC_LEVEL_TOUCH",
+  "conservative_sl_first": true
+}

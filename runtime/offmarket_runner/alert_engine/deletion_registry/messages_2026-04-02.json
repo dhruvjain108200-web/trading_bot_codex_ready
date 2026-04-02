@@ -1,0 +1,102 @@
+[
+  {
+    "timestamp": 1775070346.6401718,
+    "menu_id": null,
+    "alert_type": "HEARTBEAT",
+    "telegram_message_id": 1012,
+    "chat_id": "5992983176",
+    "deletable": false,
+    "expiry_time": 1775070526.6401718,
+    "scheduled_delete_after": 1775070526.6401718,
+    "symbol": null,
+    "extra": {},
+    "timestamp_ist": "2026-04-02 00:35:46",
+    "expiry_time_ist": "2026-04-02 00:38:46",
+    "scheduled_delete_after_ist": "2026-04-02 00:38:46"
+  },
+  {
+    "timestamp": 1775070354.9988494,
+    "menu_id": "M092_003554_839732_001",
+    "alert_type": "MENU",
+    "telegram_message_id": 1013,
+    "chat_id": "5992983176",
+    "deletable": false,
+    "expiry_time": 1775070534.9988494,
+    "scheduled_delete_after": 1775070534.9988494,
+    "symbol": null,
+    "extra": {
+      "menu_hash": "236cc8737a235ab2",
+      "recommended_symbols": [
+        "ICICIBANK",
+        "IOC",
+        "HINDPETRO"
+      ]
+    },
+    "timestamp_ist": "2026-04-02 00:35:54",
+    "expiry_time_ist": "2026-04-02 00:38:54",
+    "scheduled_delete_after_ist": "2026-04-02 00:38:54"
+  },
+  {
+    "timestamp": 1775070355.5435157,
+    "menu_id": "M092_003554_839732_001",
+    "alert_type": "PLAN",
+    "telegram_message_id": 1014,
+    "chat_id": "5992983176",
+    "deletable": false,
+    "expiry_time": 1775070535.5435157,
+    "scheduled_delete_after": 1775070535.5435157,
+    "symbol": "ICICIBANK",
+    "extra": {
+      "direction": "LONG",
+      "setup_name": "Mean Reversion",
+      "signal_hash": "f226f4b22de00645",
+      "source_chat_id": null,
+      "reply_chat_id": null
+    },
+    "timestamp_ist": "2026-04-02 00:35:55",
+    "expiry_time_ist": "2026-04-02 00:38:55",
+    "scheduled_delete_after_ist": "2026-04-02 00:38:55"
+  },
+  {
+    "timestamp": 1775070356.2248993,
+    "menu_id": "M092_003554_839732_001",
+    "alert_type": "PLAN",
+    "telegram_message_id": 1015,
+    "chat_id": "5992983176",
+    "deletable": false,
+    "expiry_time": 1775070536.2248993,
+    "scheduled_delete_after": 1775070536.2248993,
+    "symbol": "IOC",
+    "extra": {
+      "direction": "LONG",
+      "setup_name": "Mean Reversion",
+      "signal_hash": "e107f4ffa68c77d2",
+      "source_chat_id": null,
+      "reply_chat_id": null
+    },
+    "timestamp_ist": "2026-04-02 00:35:56",
+    "expiry_time_ist": "2026-04-02 00:38:56",
+    "scheduled_delete_after_ist": "2026-04-02 00:38:56"
+  },
+  {
+    "timestamp": 1775070356.6936789,
+    "menu_id": "M092_003554_839732_001",
+    "alert_type": "PLAN",
+    "telegram_message_id": 1016,
+    "chat_id": "5992983176",
+    "deletable": false,
+    "expiry_time": 1775070536.6936789,
+    "scheduled_delete_after": 1775070536.6936789,
+    "symbol": "HINDPETRO",
+    "extra": {
+      "direction": "LONG",
+      "setup_name": "Mean Reversion",
+      "signal_hash": "de9a7e1f7391020a",
+      "source_chat_id": null,
+      "reply_chat_id": null
+    },
+    "timestamp_ist": "2026-04-02 00:35:56",
+    "expiry_time_ist": "2026-04-02 00:38:56",
+    "scheduled_delete_after_ist": "2026-04-02 00:38:56"
+  }
+]

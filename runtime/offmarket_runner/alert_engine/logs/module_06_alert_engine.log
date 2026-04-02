@@ -1,0 +1,71 @@
+2026-04-01 18:08:03,933 | INFO | module06_alert_engine | Sender loop started.
+2026-04-01 18:08:03,934 | INFO | module06_alert_engine | Expiry loop started.
+2026-04-01 18:08:03,934 | INFO | module06_alert_engine | Follow-up loop started.
+2026-04-01 18:08:03,935 | INFO | module06_alert_engine | Cleanup loop started.
+2026-04-01 18:08:03,969 | INFO | module06_alert_engine | AlertEngine started.
+2026-04-01 18:09:00,498 | ERROR | module06_alert_engine | parse_and_handle_command failed
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/trading_bot_test/src/module06_alerts/module_06_alert_engine.py", line 1321, in parse_and_handle_command
+    parsed = self._parse_command(command_text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/trading_bot_test/src/module06_alerts/module_06_alert_engine.py", line 1448, in _parse_command
+    raise ValueError("Invalid command. Use: M### A C, PLAN A, EXPLAIN A, STATUS")
+ValueError: Invalid command. Use: M### A C, PLAN A, EXPLAIN A, STATUS
+2026-04-01 18:09:00,961 | INFO | module06_alert_engine | telegram_command_diag | raw='/start' action=- source_chat=5992983176 menu=- reply_chat=['-'] resolved=['-'] plans=['-'] stop=exception ok=False
+2026-04-01 18:09:15,745 | INFO | module06_alert_engine | telegram_command_diag | raw='Plan M' action=PLAN source_chat=5992983176 menu=M091_233821_913540_001 reply_chat=['5992983176'] resolved=['M->HDFCBANK'] plans=['HDFCBANK:on_demand_generated:on_demand=yes:reply=enqueued'] stop=plan_sent ok=True
+2026-04-01 18:13:22,627 | INFO | module06_alert_engine | AlertEngine stopped.
+2026-04-02 00:10:34,568 | INFO | module06_alert_engine | Sender loop started.
+2026-04-02 00:10:34,568 | INFO | module06_alert_engine | Expiry loop started.
+2026-04-02 00:10:34,568 | INFO | module06_alert_engine | Follow-up loop started.
+2026-04-02 00:10:34,568 | INFO | module06_alert_engine | Cleanup loop started.
+2026-04-02 00:10:34,568 | INFO | module06_alert_engine | AlertEngine started.
+2026-04-02 00:10:43,839 | ERROR | module06_alert_engine | send_trade_plan_reply failed for HINDPETRO
+Traceback (most recent call last):
+  File "C:\Users\bhawa\Downloads\trading_bot_codex_ready\src\module06_alerts\module_06_alert_engine.py", line 3290, in publish_from_module_outputs
+    self.send_trade_plan_reply(
+  File "C:\Users\bhawa\Downloads\trading_bot_codex_ready\src\module06_alerts\module_06_alert_engine.py", line 1187, in send_trade_plan_reply
+    send_ok = self._enqueue(
+              ^^^^^^^^^^^^^^
+  File "C:\Users\bhawa\Downloads\trading_bot_codex_ready\src\module06_alerts\module_06_alert_engine.py", line 967, in _enqueue
+    self._send_queue.put_nowait((item.priority, item.created_at, item.kind, item))
+  File "C:\Users\bhawa\AppData\Local\Programs\Python\Python312\Lib\queue.py", line 191, in put_nowait
+    return self.put(item, block=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bhawa\AppData\Local\Programs\Python\Python312\Lib\queue.py", line 150, in put
+    self._put(item)
+  File "C:\Users\bhawa\AppData\Local\Programs\Python\Python312\Lib\queue.py", line 236, in _put
+    heappush(self.queue, item)
+TypeError: '<' not supported between instances of 'QueueItem' and 'QueueItem'
+2026-04-02 00:10:43,839 | ERROR | module06_alert_engine | Sender loop error
+Traceback (most recent call last):
+  File "C:\Users\bhawa\Downloads\trading_bot_codex_ready\src\module06_alerts\module_06_alert_engine.py", line 2831, in _sender_loop
+    _, _, _, item = self._send_queue.get(timeout=self.config.sender_poll_sec)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bhawa\AppData\Local\Programs\Python\Python312\Lib\queue.py", line 181, in get
+    item = self._get()
+           ^^^^^^^^^^^
+  File "C:\Users\bhawa\AppData\Local\Programs\Python\Python312\Lib\queue.py", line 239, in _get
+    return heappop(self.queue)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'QueueItem' and 'QueueItem'
+2026-04-02 00:10:44,947 | INFO | module06_alert_engine | AlertEngine stopped.
+2026-04-02 00:17:49,652 | INFO | module06_alert_engine | Sender loop started.
+2026-04-02 00:17:49,654 | INFO | module06_alert_engine | Expiry loop started.
+2026-04-02 00:17:49,655 | INFO | module06_alert_engine | Follow-up loop started.
+2026-04-02 00:17:49,656 | INFO | module06_alert_engine | Cleanup loop started.
+2026-04-02 00:17:49,657 | INFO | module06_alert_engine | AlertEngine started.
+2026-04-02 00:18:01,188 | INFO | module06_alert_engine | AlertEngine stopped.
+2026-04-02 00:29:12,360 | INFO | module06_alert_engine | Sender loop started.
+2026-04-02 00:29:12,360 | INFO | module06_alert_engine | Expiry loop started.
+2026-04-02 00:29:12,361 | INFO | module06_alert_engine | Follow-up loop started.
+2026-04-02 00:29:12,361 | INFO | module06_alert_engine | Cleanup loop started.
+2026-04-02 00:29:12,362 | INFO | module06_alert_engine | AlertEngine started.
+2026-04-02 00:29:27,502 | INFO | module06_alert_engine | AlertEngine stopped.
+2026-04-02 00:35:44,854 | INFO | module06_alert_engine | Sender loop started.
+2026-04-02 00:35:44,854 | INFO | module06_alert_engine | Expiry loop started.
+2026-04-02 00:35:44,854 | INFO | module06_alert_engine | Follow-up loop started.
+2026-04-02 00:35:44,854 | INFO | module06_alert_engine | Cleanup loop started.
+2026-04-02 00:35:44,854 | INFO | module06_alert_engine | Telegram poll loop started.
+2026-04-02 00:35:44,862 | INFO | module06_alert_engine | AlertEngine started.
+2026-04-02 00:35:46,022 | INFO | module06_alert_engine | telegram_command_diag | raw='Plan C' action=PLAN source_chat=5992983176 menu=- reply_chat=['-'] resolved=['-'] plans=['-'] stop=no_runtime_contract ok=False
+2026-04-02 00:35:57,666 | INFO | module06_alert_engine | AlertEngine stopped.

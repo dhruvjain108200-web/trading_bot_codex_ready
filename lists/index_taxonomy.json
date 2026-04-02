@@ -1,0 +1,710 @@
+{
+  "indexes": [
+    {
+      "name": "NIFTY 50",
+      "token": "99926000",
+      "sector": "MARKET",
+      "pillar": "macro",
+      "priority": 1,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty 50",
+      "resolved_name": "NIFTY",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty Bank",
+      "token": "99926009",
+      "sector": "BANKING",
+      "pillar": "macro",
+      "priority": 1,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Bank",
+      "resolved_name": "Nifty Bank",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Financial Services",
+      "token": "99926037",
+      "sector": "FINANCIALS",
+      "pillar": "macro",
+      "priority": 1,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Fin Service",
+      "resolved_name": "FINNIFTY",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty Midcap 100",
+      "token": "99926011",
+      "sector": "MIDCAP",
+      "pillar": "macro",
+      "priority": 1,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "NIFTY MIDCAP 100",
+      "resolved_name": "NIFTY MIDCAP 100",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "INDIA VIX",
+      "token": "99926017",
+      "sector": "VOLATILITY",
+      "pillar": "macro",
+      "priority": 1,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "INDIA VIX",
+      "resolved_name": "INDIA VIX",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Auto",
+      "token": "99926029",
+      "sector": "AUTO",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Auto",
+      "resolved_name": "Nifty Auto",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Chemicals",
+      "token": null,
+      "sector": "CHEMICALS",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "ignore_for_now"
+    },
+    {
+      "name": "Nifty FMCG",
+      "token": "99926021",
+      "sector": "FMCG",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty FMCG",
+      "resolved_name": "Nifty FMCG",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Healthcare",
+      "token": null,
+      "sector": "HEALTHCARE",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty IT",
+      "token": "99926008",
+      "sector": "IT",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty IT",
+      "resolved_name": "Nifty IT",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Media",
+      "token": "99926031",
+      "sector": "MEDIA",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Media",
+      "resolved_name": "Nifty Media",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Metal",
+      "token": "99926030",
+      "sector": "METAL",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Metal",
+      "resolved_name": "Nifty Metal",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Pharma",
+      "token": "99926023",
+      "sector": "PHARMA",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Pharma",
+      "resolved_name": "Nifty Pharma",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Private Bank",
+      "token": "99926047",
+      "sector": "PRIVATE_BANK",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Pvt Bank",
+      "resolved_name": "NIFTY PVT BANK",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty PSU Bank",
+      "token": "99926025",
+      "sector": "PSU_BANK",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty PSU Bank",
+      "resolved_name": "Nifty PSU Bank",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Realty",
+      "token": "99926018",
+      "sector": "REALTY",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Realty",
+      "resolved_name": "Nifty Realty",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Consumer Durables",
+      "token": null,
+      "sector": "CONSUMER_DURABLES",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "ignore_for_now"
+    },
+    {
+      "name": "Nifty Oil and Gas",
+      "token": null,
+      "sector": "OIL_GAS",
+      "pillar": "micro",
+      "priority": 2,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty 100",
+      "token": "99926012",
+      "sector": "BROAD",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty 100",
+      "resolved_name": "Nifty 100",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Next 50",
+      "token": "99926013",
+      "sector": "BROAD",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Next 50",
+      "resolved_name": "Nifty Next 50",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty 200",
+      "token": "99926033",
+      "sector": "BROAD",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty 200",
+      "resolved_name": "Nifty 200",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty 500",
+      "token": "99926004",
+      "sector": "BROAD",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty 500",
+      "resolved_name": "Nifty 500",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Total Market",
+      "token": null,
+      "sector": "BROAD",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "ignore_for_now"
+    },
+    {
+      "name": "Nifty Midcap 50",
+      "token": "99926014",
+      "sector": "MIDCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Midcap 50",
+      "resolved_name": "Nifty Midcap 50",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Midcap 150",
+      "token": "99926060",
+      "sector": "MIDCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "NIFTY MIDCAP 150",
+      "resolved_name": "NIFTY MIDCAP 150",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty Midcap Select",
+      "token": "99926074",
+      "sector": "MIDCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "NIFTY MID SELECT",
+      "resolved_name": "MIDCPNIFTY",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty Smallcap 50",
+      "token": null,
+      "sector": "SMALLCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Smallcap 100",
+      "token": null,
+      "sector": "SMALLCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Smallcap 250",
+      "token": null,
+      "sector": "SMALLCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Smallcap 500",
+      "token": null,
+      "sector": "SMALLCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Microcap 250",
+      "token": null,
+      "sector": "MICROCAP",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty LargeMidcap 250",
+      "token": null,
+      "sector": "BROAD",
+      "pillar": "other",
+      "priority": 3,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Capital Markets",
+      "token": null,
+      "sector": "CAPITAL_MARKETS",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty Commodities",
+      "token": "99926035",
+      "sector": "COMMODITIES",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Commodities",
+      "resolved_name": "Nifty Commodities",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty CPSE",
+      "token": "99926041",
+      "sector": "CPSE",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty CPSE",
+      "resolved_name": "Nifty CPSE",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Energy",
+      "token": "99926020",
+      "sector": "ENERGY",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Energy",
+      "resolved_name": "Nifty Energy",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty India Consumption",
+      "token": null,
+      "sector": "CONSUMPTION",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty India Defence",
+      "token": null,
+      "sector": "DEFENCE",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty India Digital",
+      "token": null,
+      "sector": "DIGITAL",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty India Manufacturing",
+      "token": null,
+      "sector": "MANUFACTURING",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty MNC",
+      "token": "99926022",
+      "sector": "MNC",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty MNC",
+      "resolved_name": "Nifty MNC",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty PSE",
+      "token": "99926024",
+      "sector": "PSE",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty PSE",
+      "resolved_name": "Nifty PSE",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty Rural",
+      "token": null,
+      "sector": "RURAL",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty Services Sector",
+      "token": "99926026",
+      "sector": "SERVICES",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Serv Sector",
+      "resolved_name": "NIFTY SERV SECTOR",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty Housing",
+      "token": null,
+      "sector": "HOUSING",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty Core Housing",
+      "token": null,
+      "sector": "CORE_HOUSING",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty Transportation & Logistics",
+      "token": null,
+      "sector": "TRANSPORT_LOGISTICS",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "active_synthetic"
+    },
+    {
+      "name": "Nifty EV & New Age Automotive",
+      "token": null,
+      "sector": "EV_NEW_AGE_AUTO",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "ignore_for_now"
+    },
+    {
+      "name": "Nifty Conglomerate 50",
+      "token": null,
+      "sector": "CONGLOMERATE",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Non-Cyclical Consumer",
+      "token": null,
+      "sector": "NON_CYCLICAL_CONSUMER",
+      "pillar": "other",
+      "priority": 4,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Alpha 50",
+      "token": "99926059",
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "NIFTY Alpha 50",
+      "resolved_name": "NIFTY ALPHA 50",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty200 Alpha 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Alpha Low-Volatility 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty100 Low Volatility 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Low Volatility 50",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Quality Low-Volatility 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty200 Quality 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty100 Quality 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Quality 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty200 Momentum 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty500 Momentum 50",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Midcap150 Momentum 50",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty50 Value 20",
+      "token": "99926045",
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty50 Value 20",
+      "resolved_name": "Nifty50 Value 20",
+      "resolved_exchange": "NSE"
+    },
+    {
+      "name": "Nifty200 Value 30",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty500 Value 50",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Dividend Opportunities 50",
+      "token": "99926034",
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Div Opps 50",
+      "resolved_name": "NIFTY DIV OPPS 50",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty50 Equal Weight",
+      "token": "99926056",
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "NIFTY50 EQL Wgt",
+      "resolved_name": "NIFTY50 EQL WGT",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty100 Equal Weight",
+      "token": "99926057",
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "NIFTY100 EQL Wgt",
+      "resolved_name": "NIFTY100 EQL WGT",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    },
+    {
+      "name": "Nifty500 Equal Weight",
+      "token": null,
+      "sector": "FACTOR",
+      "pillar": "other",
+      "priority": 5,
+      "resolution_status": "UNRESOLVED",
+      "theme_bucket": "watchlist"
+    },
+    {
+      "name": "Nifty Infrastructure",
+      "exchange": "NSE",
+      "token": "99926019",
+      "resolution_status": "RESOLVED",
+      "resolved_symbol": "Nifty Infra",
+      "resolved_name": "NIFTY INFRA",
+      "resolved_exchange": "NSE",
+      "resolved_instrumenttype": "AMXIDX"
+    }
+  ]
+}

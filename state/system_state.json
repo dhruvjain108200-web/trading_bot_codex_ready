@@ -1,0 +1,19 @@
+{
+  "system_state": "RUNNING",
+  "execution_mode": "SIGNALS_ONLY",
+  "execution_enabled": false,
+  "current_fraction": 1,
+  "current_set": 1,
+  "wins_in_set": 0,
+  "losses_in_set": 0,
+  "set_locked": false,
+  "fraction_locked": false,
+  "daily_trade_count": 0,
+  "consecutive_losses": 0,
+  "last_scan_bucket": 5914597,
+  "last_scan_ts": 1774379402,
+  "last_publish_ts": 1774379402,
+  "last_cycle_status": "OFFMARKET_CYCLE_RAN_SIGNALS_RELEASED",
+  "last_menu_id": null,
+  "updated_at": 1774379421
+}

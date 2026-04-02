@@ -1,0 +1,238 @@
+{
+  "generated_at_ist": "2026-04-02T00:35:43.727004+05:30",
+  "counts": {
+    "active_synthetic": 11,
+    "watchlist": 22,
+    "ignore_for_now": 4
+  },
+  "buckets": {
+    "active_synthetic": [
+      {
+        "name": "Nifty Healthcare",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Oil and Gas",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Capital Markets",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty India Consumption",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty India Defence",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty India Digital",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty India Manufacturing",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Rural",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Housing",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Core Housing",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Transportation & Logistics",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      }
+    ],
+    "watchlist": [
+      {
+        "name": "Nifty Smallcap 50",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Smallcap 100",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Smallcap 250",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Smallcap 500",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Microcap 250",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty LargeMidcap 250",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Conglomerate 50",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Non-Cyclical Consumer",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty200 Alpha 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Alpha Low-Volatility 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty100 Low Volatility 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Low Volatility 50",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Quality Low-Volatility 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty200 Quality 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty100 Quality 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Quality 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty200 Momentum 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty500 Momentum 50",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Midcap150 Momentum 50",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty200 Value 30",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty500 Value 50",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty500 Equal Weight",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      }
+    ],
+    "ignore_for_now": [
+      {
+        "name": "Nifty Chemicals",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Consumer Durables",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty Total Market",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      },
+      {
+        "name": "Nifty EV & New Age Automotive",
+        "symbol": null,
+        "tradingsymbol": null,
+        "exchange": "NSE"
+      }
+    ]
+  }
+}

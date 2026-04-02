@@ -1,0 +1,152 @@
+[
+  {
+    "symbol": "RELIANCE",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "ONGC",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "BPCL",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "IOC",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "HINDPETRO",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "GAIL",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "OIL",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "ADANIGREEN",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "ADANITRANS",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "ADANIPOWER",
+    "exchange": "NSE",
+    "sector": "ENERGY",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "HDFCBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "ICICIBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "SBIN",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "AXISBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "INDUSINDBK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "BANKBARODA",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "PNB",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "CANBK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "FEDERALBNK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "IDFCFIRSTB",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "AUBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "RBLBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "BANDHANBNK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  },
+  {
+    "symbol": "YESBANK",
+    "exchange": "NSE",
+    "sector": "BANKING",
+    "source": "watchlist_fallback"
+  }
+]

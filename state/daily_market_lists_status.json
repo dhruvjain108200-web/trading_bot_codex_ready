@@ -1,0 +1,18 @@
+{
+  "timestamp_ist": "2026-03-23T01:41:30.939860+05:30",
+  "movers": {
+    "ok": true,
+    "count": 0,
+    "reason": ""
+  },
+  "losers": {
+    "ok": true,
+    "count": 0,
+    "reason": ""
+  },
+  "potential": {
+    "ok": true,
+    "count": 25,
+    "reason": ""
+  }
+}

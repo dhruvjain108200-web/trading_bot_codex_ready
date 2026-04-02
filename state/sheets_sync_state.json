@@ -1,0 +1,24 @@
+{
+  "tabs": {
+    "ALERT_JOURNAL": {
+      "last_ts": null,
+      "recent_event_ids": []
+    },
+    "PAPER_TRADES": {
+      "last_ts": null,
+      "recent_event_ids": []
+    },
+    "SYSTEM_HEALTH_SNAPSHOT": {
+      "last_ts": null,
+      "recent_event_ids": []
+    },
+    "DAILY_SUMMARY": {
+      "last_ts": null,
+      "recent_event_ids": []
+    },
+    "BACKTEST_SUMMARY": {
+      "last_ts": null,
+      "recent_event_ids": []
+    }
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": 1775066965.4651067,
+    "menu_id": "M091_233821_913540_001",
+    "alert_type": "PLAN",
+    "telegram_message_id": 1005,
+    "chat_id": "5992983176",
+    "deletable": false,
+    "expiry_time": 1775067145.4651008,
+    "scheduled_delete_after": 1775067145.4651008,
+    "symbol": "HDFCBANK",
+    "extra": {
+      "direction": "LONG",
+      "setup_name": "Mean Reversion",
+      "signal_hash": "055de2d8a1af9b95",
+      "source_chat_id": 5992983176,
+      "reply_chat_id": 5992983176
+    },
+    "timestamp_ist": "2026-04-01 23:39:25",
+    "expiry_time_ist": "2026-04-01 23:42:25",
+    "scheduled_delete_after_ist": "2026-04-01 23:42:25"
+  }
+]
